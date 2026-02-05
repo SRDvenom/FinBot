@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FinBot — Financial Chat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/styles.css">
+  </head>
+  <body>
+    <main class="app">
+      <section class="panel">
+        <header class="panel__header">
+          <div class="brand">
+            <div class="logo">FB</div>
+            <div>
+              <h1>FinBot</h1>
+              <p class="muted">Ask stock prices, EMI, SIP or get financial advice</p>
+            </div>
+          </div>
+          <div class="panel__controls">
+            <button id="clearBtn" class="btn small muted">Clear</button>
+          </div>
+        </header>
+
+        <div id="chat" class="chat" aria-live="polite" aria-atomic="false"></div>
+
+        <form id="form" class="composer" autocomplete="off">
+          <textarea id="input" class="input" rows="1" placeholder="Type a question: e.g. 'Price of TCS' or 'EMI 500000 7 10' (principal rate years)" aria-label="Message"></textarea>
+          <div class="composer__right">
+            <button type="button" id="examplesBtn" class="btn small">Examples</button>
+            <button type="submit" id="sendBtn" class="btn primary">Send</button>
+          </div>
+        </form>
+
+        <div id="examples" class="examples hidden">
+          <button class="example">Price of TCS</button>
+          <button class="example">EMI 500000 7 10</button>
+          <button class="example">SIP 5000 12 10</button>
+          <button class="example">How to start investing in mutual funds?</button>
+        </div>
+      </section>
+
+      <aside class="info">
+        <h2>Tips</h2>
+        <ul>
+          <li>Supported quick commands: stock prices, EMI and SIP calculations — the backend detects them automatically.</li>
+          <li>Use Shift+Enter for a new line. Press Enter to send.</li>
+        </ul>
+      </aside>
+    </main>
+
+    <script src="./static/js/app.js" defer></script>
+  </body>
+</html>
